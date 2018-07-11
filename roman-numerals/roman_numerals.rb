@@ -16,10 +16,12 @@ class Integer
  }
 
   def to_roman
+    n = self
     roman_numerals = ""
+
     ROMAN_NUMBERS.each {|value, letter|
-      roman_numerals.concat(letter*(self / value))
-      self = self % value
+      roman_numerals.concat(letter*(n / value))
+      n = n % value
     }
     return roman_numerals
   end
